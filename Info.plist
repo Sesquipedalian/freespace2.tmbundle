@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>wbafgbiryy@tznvy.pbz</string>
+	<key>contactName</key>
+	<string>Jon Stovell</string>
+	<key>description</key>
+	<string>Syntax highlighting for FreeSpace 2 mission and table files</string>
+	<key>name</key>
+	<string>FreeSpace 2</string>
+	<key>uuid</key>
+	<string>29ABEA4E-D9D3-4D32-9601-B9551782EBBD</string>
+</dict>
+</plist>
