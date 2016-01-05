@@ -26,6 +26,9 @@ Supported file types:
 
 ## Changelog
 
+### 0.2.1
+* Adjusts SEXP detection to work around a bug in Sublime Text
+
 ### 0.2.0
 * Restructures SEXP handling to be much more robust
 * Better differentiates some language elements
