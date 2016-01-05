@@ -27,7 +27,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(XSTR)\((?=")</string>
+			<string>(XSTR)\(</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -39,7 +39,7 @@
 			<key>contentName</key>
 			<string>string.quoted.double</string>
 			<key>end</key>
-			<string>(?&lt;="),\s+(-?\d+)\)</string>
+			<string>,\s+(-?\d+)\)</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
