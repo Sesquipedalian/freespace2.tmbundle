@@ -23,3 +23,12 @@ Supported file types:
 2. Use Sublime Text's "Browse Packages..." menu option to open its packages folder. 
 3. Drag freespace2.tmbundle into that folder
 4. Restart Sublime Text.
+
+## Changelog
+
+### 0.2.0
+* Restructures SEXP handling to be much more robust
+* Better differentiate some language elements
+
+### 0.1.0
+* Initial release

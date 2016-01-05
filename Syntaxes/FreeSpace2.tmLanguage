@@ -14,16 +14,22 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.fs2</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>^\s*#[^$]+$</string>
-			<key>name</key>
-			<string>entity.name.function</string>
+			<string>^\s*(#[^$;]+)</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>;[^$]+$</string>
 			<key>name</key>
-			<string>comment.line</string>
+			<string>comment.line.fs2</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -33,11 +39,11 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.class</string>
+					<string>support.class.fs2</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
-			<string>string.quoted.double</string>
+			<string>string.quoted.double.fs2</string>
 			<key>end</key>
 			<string>,\s+(-?\d+)\)</string>
 			<key>endCaptures</key>
@@ -45,7 +51,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant</string>
+					<string>support.constant.fs2</string>
 				</dict>
 			</dict>
 			<key>patterns</key>
@@ -54,13 +60,13 @@
 					<key>match</key>
 					<string>\$[PpVvEeKkYyWwGgBbRrHhNnFf]</string>
 					<key>name</key>
-					<string>constant.other.escape</string>
+					<string>constant.language.fs2</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\$(quote|semicolon|slash|\|)</string>
 					<key>name</key>
-					<string>constant.other.escape</string>
+					<string>constant.character.escape.fs2</string>
 				</dict>
 			</array>
 		</dict>
@@ -69,39 +75,26 @@
 			<string>#quoted</string>
 		</dict>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag</string>
-				</dict>
-			</dict>
 			<key>match</key>
-			<string>(\$[A-Za-z0-9_ ]+)(:|$)</string>
+			<string>\$[A-Za-z0-9_ ]+(?=:|$)</string>
+			<key>name</key>
+			<string>entity.name.tag.fs2</string>
 		</dict>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.other.attribute-name</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.other.attribute-name</string>
-				</dict>
-			</dict>
 			<key>match</key>
-			<string>(\+|@)([A-Za-z0-9_ ]+)(:|$)</string>
+			<string>\+[A-Za-z0-9_ ]+(?=:|$)</string>
+			<key>name</key>
+			<string>keyword.other.fs2</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>@[A-Za-z0-9_ ]+(?=:|$)</string>
+			<key>name</key>
+			<string>variable.parameter.fs2</string>
 		</dict>
 		<dict>
 			<key>begin</key>
 			<string>(?&lt;=^\$Formula:|^\$Arrival Cue:|^\$Departure Cue:|^\$AI Goals:)\s</string>
-			<key>comment</key>
-			<string>Uses lookbehind to avoid conflicts with entity.name.tag rule. End matches a line starting a new token.</string>
 			<key>end</key>
 			<string>^(?=\$|\+|\@|#)</string>
 			<key>patterns</key>
@@ -125,7 +118,7 @@
 					<key>end</key>
 					<string>"</string>
 					<key>name</key>
-					<string>string.quoted.double</string>
+					<string>string.quoted.double.fs2</string>
 				</dict>
 			</array>
 		</dict>
@@ -137,7 +130,7 @@
 					<key>match</key>
 					<string>(?&lt;=\s)@[^\[]+\[\d+\](?=\s)</string>
 					<key>name</key>
-					<string>variable.other</string>
+					<string>variable.other.fs2</string>
 				</dict>
 			</array>
 		</dict>
@@ -713,7 +706,7 @@
 						)
 						(?=\s|$)</string>
 					<key>name</key>
-					<string>keyword.operator</string>
+					<string>keyword.operator.fs2</string>
 				</dict>
 			</array>
 		</dict>
