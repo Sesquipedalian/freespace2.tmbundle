@@ -65,12 +65,8 @@
 			</array>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>end</key>
-			<string>"</string>
-			<key>name</key>
-			<string>string.quoted.double</string>
+			<key>include</key>
+			<string>#quoted</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -102,565 +98,626 @@
 			<string>(\+|@)([A-Za-z0-9_ ]+)(:|$)</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(?&lt;=\s)@[^\[]+\[\d+\](?=\s)</string>
-			<key>name</key>
-			<string>variable.other</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(?x)
-(?&lt;=\(\s)
-(	xor
-|	when-argument
-|	when
-|	weapon-set-damage-type
-|	weapon-recharge-pct
-|	weapon-energy-pct
-|	weapon-create
-|	waypoint-twice
-|	waypoint-missed
-|	was-promotion-granted
-|	was-medal-granted
-|	was-destroyed-by-delay
-|	warp-effect
-|	validate-goal
-|	validate-argument
-|	validate-all-arguments
-|	use-nav-cinematics
-|	use-autopilot
-|	update-sound-environment
-|	unset-nav-visited
-|	unset-nav-needslink
-|	unset-nav-carry
-|	unset-cutscene-bars
-|	unset-bit
-|	unselect-nav
-|	unscramble-messages
-|	unrestrict-nav
-|	unprotect-ship
-|	unlock-secondary-weapon
-|	unlock-primary-weapon
-|	unlock-afterburner
-|	unhide-nav
-|	turret-unprotect-ship
-|	turret-tagged-specific
-|	turret-tagged-only
-|	turret-tagged-clear-specific
-|	turret-tagged-clear
-|	turret-subsys-target-enable
-|	turret-subsys-target-disable
-|	turret-set-target-priorities
-|	turret-set-target-order
-|	turret-set-secondary-ammo
-|	turret-set-rate-of-fire
-|	turret-set-primary-ammo
-|	turret-set-optimum-range
-|	turret-set-direction-preference
-|	turret-protect-ship
-|	turret-lock-all
-|	turret-lock
-|	turret-get-secondary-ammo
-|	turret-get-primary-ammo
-|	turret-free-all
-|	turret-free
-|	turret-change-weapon
-|	true
-|	trigger-submodel-animation
-|	transfer-cargo
-|	training-msg
-|	time-wing-destroyed
-|	time-wing-departed
-|	time-wing-arrived
-|	time-undocked
-|	time-ship-destroyed
-|	time-ship-departed
-|	time-ship-arrived
-|	time-elapsed-last-order
-|	time-docked
-|	tech-reset-to-default
-|	tech-add-weapons
-|	tech-add-ships
-|	tech-add-intel-xstr
-|	tech-add-intel
-|	team-score
-|	targeted
-|	supernova-stop
-|	supernova-start
-|	subsys-set-random
-|	string-to-int
-|	string-set-substring
-|	string-less-than
-|	string-greater-than
-|	string-get-substring
-|	string-get-length
-|	string-equals
-|	string-concatenate
-|	speed
-|	special-warpout-name
-|	special-warp-dist
-|	special-check
-|	skill-level-at-least
-|	sim-hits-left
-|	signum
-|	show-subtitle-text
-|	show-subtitle-image
-|	show-subtitle
-|	show-jumpnode
-|	ship_score
-|	ship-vulnerable
-|	ship-visible
-|	ship-vaporize
-|	ship-vanish
-|	ship-untargetable-as-bomb
-|	ship-untag
-|	ship-unstealthy
-|	ship-type-destroyed
-|	ship-turret-target-order
-|	ship-targetable-as-bomb
-|	ship-tag
-|	ship-subsys-vanish
-|	ship-subsys-untargetable
-|	ship-subsys-targetable
-|	ship-subsys-no-replace
-|	ship-subsys-no-live-debris
-|	ship-subsys-ignore_if_dead
-|	ship-subsys-guardian-threshold
-|	ship-stealthy
-|	ship-set-shockwave-damage-type
-|	ship-set-damage-type
-|	ship-rot-maneuver
-|	ship-no-vaporize
-|	ship-no-guardian
-|	ship-maneuver
-|	ship-lat-maneuver
-|	ship-invulnerable
-|	ship-invisible
-|	ship-guardian-threshold
-|	ship-guardian
-|	ship-effect
-|	ship-deaths
-|	ship-create
-|	ship-copy-damage
-|	ship-change-callsign
-|	ship-change-alt-name
-|	shields-on
-|	shields-off
-|	shields-left
-|	shield-recharge-pct
-|	shield-quad-low
-|	set-weapon-energy
-|	set-variable-by-index
-|	set-unscanned
-|	set-training-context-speed
-|	set-training-context-fly-path
-|	set-time-compression
-|	set-thrusters-status
-|	set-support-ship
-|	set-subsystem-strength
-|	set-subspace-drive
-|	set-sound-environment
-|	set-skybox-orientation
-|	set-skybox-model
-|	set-shield-energy
-|	set-secondary-weapon
-|	set-secondary-ammo
-|	set-scanned
-|	set-respawns
-|	set-primary-weapon
-|	set-primary-ammo
-|	set-post-effect
-|	set-player-throttle-speed
-|	set-player-orders
-|	set-persona
-|	set-object-speed-z
-|	set-object-speed-y
-|	set-object-speed-x
-|	set-object-position
-|	set-object-orientation
-|	set-object-facing-object
-|	set-object-facing
-|	set-num-countermeasures
-|	set-nav-visited
-|	set-nav-needslink
-|	set-nav-carry
-|	set-motion-debris-override
-|	set-mobile
-|	set-mission-mood
-|	set-jumpnode-name
-|	set-jumpnode-model
-|	set-jumpnode-color
-|	set-immobile
-|	set-fov
-|	set-explosion-option
-|	set-ets-values
-|	set-docked
-|	set-departure-info
-|	set-debriefing-toggled
-|	set-death-message
-|	set-cutscene-bars
-|	set-cargo
-|	set-camera-target
-|	set-camera-shudder
-|	set-camera-rotation
-|	set-camera-position
-|	set-camera-host
-|	set-camera-fov
-|	set-camera-facing-object
-|	set-camera-facing
-|	set-camera
-|	set-bit
-|	set-arrival-info
-|	set-armor-type
-|	set-ambient-light
-|	set-afterburner-energy
-|	send-random-message
-|	send-message-list
-|	send-message
-|	self-destruct
-|	select-nav
-|	secondary-fired-since
-|	secondary-ammo-pct
-|	secondaries-depleted
-|	script-eval-string
-|	script-eval-num
-|	script-eval-block
-|	script-eval
-|	scramble-messages
-|	sabotage-subsystem
-|	rotating-subsys-set-turn-time
-|	reverse-rotating-subsystem
-|	restrict-nav
-|	respawns-left
-|	reset-time-compression
-|	reset-orders
-|	reset-fov
-|	reset-camera
-|	repair-subsystem
-|	remove-weapons
-|	remove-sun-bitmap
-|	remove-goal
-|	remove-from-collision-group
-|	remove-background-bitmap
-|	red-alert
-|	random-of
-|	random-multiple-of
-|	rand-multiple
-|	rand
-|	query-orders
-|	protect-ship
-|	primitive-sensors-set-range
-|	primary-fired-since
-|	primary-ammo-pct
-|	primaries-depleted
-|	pow
-|	player-use-ai
-|	player-not-use-ai
-|	player-is-cheating
-|	play-sound-from-table
-|	play-sound-from-file
-|	perform-actions
-|	percent-ships-disarmed
-|	percent-ships-disabled
-|	percent-ships-destroyed
-|	percent-ships-departed
-|	percent-ships-arrived
-|	pause-sound-from-file
-|	path-flown
-|	order
-|	or
-|	number-of
-|	num_type_kills
-|	num_kills
-|	num_class_kills
-|	num_assists
-|	num-within-box
-|	num-valid-arguments
-|	num-ships-in-wing
-|	num-ships-in-battle
-|	num-players
-|	not
-|	node-targeted
-|	next-mission
-|	never-warp
-|	nebula-toggle-poof
-|	nebula-change-storm
-|	nebula-change-pattern
-|	multi-eval
-|	modify-variable
-|	mod
-|	mission-time-msecs
-|	mission-time
-|	mission-set-subspace
-|	mission-set-nebula
-|	missile-locked
-|	min
-|	max
-|	lock-secondary-weapon
-|	lock-rotating-subsystem
-|	lock-primary-weapon
-|	lock-perspective
-|	lock-afterburner
-|	key-reset-multiple
-|	key-reset
-|	key-pressed
-|	kamikaze
-|	jettison-cargo-delay
-|	is_tagged
-|	is-subsystem-destroyed-delay
-|	is-subsystem-destroyed
-|	is-ship-visible
-|	is-ship-type
-|	is-ship-stealthy
-|	is-ship-class
-|	is-secondary-selected
-|	is-primary-selected
-|	is-previous-goal-true
-|	is-previous-goal-incomplete
-|	is-previous-goal-false
-|	is-previous-event-true
-|	is-previous-event-incomplete
-|	is-previous-event-false
-|	is-player
-|	is-nav-visited
-|	is-nav-linked
-|	is-in-mission
-|	is-in-box
-|	is-iff
-|	is-goal-true-delay
-|	is-goal-incomplete
-|	is-goal-false-delay
-|	is-friendly-stealth-visible
-|	is-facing
-|	is-event-true-msecs-delay
-|	is-event-true-delay
-|	is-event-true
-|	is-event-incomplete
-|	is-event-false-msecs-delay
-|	is-event-false-delay
-|	is-event-false
-|	is-disarmed-delay
-|	is-disarmed
-|	is-disabled-delay
-|	is-disabled
-|	is-destroyed-delay
-|	is-destroyed
-|	is-cargo-known-delay
-|	is-cargo-known
-|	is-cargo
-|	is-bit-set
-|	is-ai-class
-|	invalidate-goal
-|	invalidate-argument
-|	invalidate-all-arguments
-|	int-to-string
-|	in-sequence
-|	ignore-key
-|	if-then-else
-|	hud-set-text-num
-|	hud-set-text
-|	hud-set-retail-gauge-active
-|	hud-set-message
-|	hud-set-max-targeting-range
-|	hud-set-frame
-|	hud-set-directive
-|	hud-set-custom-gauge-active
-|	hud-set-coords
-|	hud-set-color
-|	hud-gauge-set-active
-|	hud-display-gauge
-|	hud-disable-except-messages
-|	hud-disable
-|	hud-clear-messages
-|	hud-activate-gauge-type
-|	hits-left-subsystem-specific
-|	hits-left-subsystem-generic
-|	hits-left-subsystem
-|	hits-left
-|	hide-nav
-|	hide-jumpnode
-|	has-undocked-delay
-|	has-undocked
-|	has-time-elapsed
-|	has-secondary-weapon
-|	has-primary-weapon
-|	has-docked-delay
-|	has-docked
-|	has-departed-delay
-|	has-departed
-|	has-been-tagged-delay
-|	has-arrived-delay
-|	has-arrived
-|	grant-promotion
-|	grant-medal
-|	good-secondary-time
-|	good-rearm-time
-|	goals
-|	get-variable-by-index
-|	get-throttle-speed
-|	get-secondary-ammo
-|	get-primary-ammo
-|	get-object-z
-|	get-object-y
-|	get-object-x
-|	get-object-speed-z
-|	get-object-speed-y
-|	get-object-speed-x
-|	get-object-pitch
-|	get-object-heading
-|	get-object-bank
-|	get-num-countermeasures
-|	get-fov
-|	get-ets-value
-|	get-damage-caused
-|	get-collision-group
-|	friendly-stealth-visible
-|	friendly-stealth-invisible
-|	free-rotating-subsystem
-|	force-jump
-|	force-glide
-|	for-counter
-|	flash-hud-gauge
-|	fix-warp
-|	fire-beam-at-coordinates
-|	fire-beam
-|	field-set-damage-type
-|	false
-|	fade-out
-|	fade-in
-|	facing-waypoint
-|	facing
-|	explosion-effect
-|	exchange-cargo
-|	every-time-argument
-|	every-time
-|	every-of
-|	engine-recharge-pct
-|	end-of-campaign
-|	end-mission
-|	end-campaign
-|	enable-ets
-|	enable-builtin-messages
-|	don\x{27}t-collide-invisible
-|	do-nothing
-|	do-for-valid-arguments
-|	distance-to-nav
-|	distance-ship-subsystem
-|	distance
-|	disable-ets
-|	disable-builtin-messages
-|	directive-value
-|	destroyed-or-departed-delay
-|	destroy-subsys-instantly
-|	destroy-instantly
-|	depart-node-delay
-|	del-nav
-|	debug
-|	deactivate-glow-points
-|	deactivate-glow-point-bank
-|	deactivate-glow-maps
-|	damaged-escort-priority-all
-|	damaged-escort-priority
-|	current-speed
-|	copy-variable-from-index
-|	copy-variable-between-indexes
-|	cond
-|	collide-invisible
-|	close-sound-from-file
-|	clear-wing-goals
-|	clear-subtitles
-|	clear-ship-goals
-|	clear-goals
-|	change-team-score
-|	change-team-color
-|	change-subsystem-name
-|	change-soundtrack
-|	change-ship-class
-|	change-player-score
-|	change-iff-color
-|	change-iff
-|	change-ai-class
-|	cargo-no-deplete
-|	cap-waypoint-speed
-|	cap-subsys-cargo-known-delay
-|	call-ssm-strike
-|	break-warp
-|	bitwise-xor
-|	bitwise-or
-|	bitwise-not
-|	bitwise-and
-|	beam-unprotect-ship
-|	beam-protect-ship
-|	beam-lock-all
-|	beam-lock
-|	beam-free-all
-|	beam-free
-|	beam-create
-|	awacs-set-radius
-|	avg
-|	are-waypoints-done-delay
-|	are-waypoints-done
-|	are-ship-flags-set
-|	any-of
-|	and-in-sequence
-|	and
-|	alter-ship-flag
-|	allow-weapon
-|	allow-warp
-|	allow-treason
-|	allow-ship
-|	ai-waypoints-once
-|	ai-waypoints
-|	ai-warp-out
-|	ai-warp
-|	ai-undock
-|	ai-stay-still
-|	ai-stay-near-ship
-|	ai-play-dead
-|	ai-keep-safe-distance
-|	ai-ignore-new
-|	ai-ignore
-|	ai-guard-wing
-|	ai-guard
-|	ai-form-on-wing
-|	ai-evade-ship
-|	ai-dock
-|	ai-disarm-ship
-|	ai-disable-ship
-|	ai-destroy-subsystem
-|	ai-chase-wing
-|	ai-chase-any
-|	ai-chase
-|	afterburner-energy-pct
-|	adjust-audio-volume
-|	add-wing-goal
-|	add-to-collision-group
-|	add-sun-bitmap
-|	add-ship-goal
-|	add-remove-escort
-|	add-nav-waypoint
-|	add-nav-ship
-|	add-goal
-|	add-background-bitmap
-|	activate-glow-points
-|	activate-glow-point-bank
-|	activate-glow-maps
-|	abs
-|	&gt;=
-|	&gt;
-|	=
-|	&lt;=
-|	&lt;
-|	/
-|	-
-|	\+
-|	\*
-|	!=
-)\b</string>
-			<key>name</key>
-			<string>keyword.operator</string>
+			<key>begin</key>
+			<string>(?&lt;=^\$Formula:|^\$Arrival Cue:|^\$Departure Cue:|^\$AI Goals:)\s</string>
+			<key>comment</key>
+			<string>Uses lookbehind to avoid conflicts with entity.name.tag rule. End matches a line starting a new token.</string>
+			<key>end</key>
+			<string>^(?=\$|\+|\@|#)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#sexps</string>
+				</dict>
+			</array>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>quoted</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>end</key>
+					<string>"</string>
+					<key>name</key>
+					<string>string.quoted.double</string>
+				</dict>
+			</array>
+		</dict>
+		<key>sexp_variables</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=\s)@[^\[]+\[\d+\](?=\s)</string>
+					<key>name</key>
+					<string>variable.other</string>
+				</dict>
+			</array>
+		</dict>
+		<key>sexps</key>
+		<dict>
+			<key>begin</key>
+			<string>\(</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#sexps</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#quoted</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#sexp_variables</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)
+						(?&lt;=^|\s)
+						(	xor
+						|	when-argument
+						|	when
+						|	weapon-set-damage-type
+						|	weapon-recharge-pct
+						|	weapon-energy-pct
+						|	weapon-create
+						|	waypoint-twice
+						|	waypoint-missed
+						|	was-promotion-granted
+						|	was-medal-granted
+						|	was-destroyed-by-delay
+						|	warp-effect
+						|	validate-goal
+						|	validate-argument
+						|	validate-all-arguments
+						|	use-nav-cinematics
+						|	use-autopilot
+						|	update-sound-environment
+						|	unset-nav-visited
+						|	unset-nav-needslink
+						|	unset-nav-carry
+						|	unset-cutscene-bars
+						|	unset-bit
+						|	unselect-nav
+						|	unscramble-messages
+						|	unrestrict-nav
+						|	unprotect-ship
+						|	unlock-secondary-weapon
+						|	unlock-primary-weapon
+						|	unlock-afterburner
+						|	unhide-nav
+						|	turret-unprotect-ship
+						|	turret-tagged-specific
+						|	turret-tagged-only
+						|	turret-tagged-clear-specific
+						|	turret-tagged-clear
+						|	turret-subsys-target-enable
+						|	turret-subsys-target-disable
+						|	turret-set-target-priorities
+						|	turret-set-target-order
+						|	turret-set-secondary-ammo
+						|	turret-set-rate-of-fire
+						|	turret-set-primary-ammo
+						|	turret-set-optimum-range
+						|	turret-set-direction-preference
+						|	turret-protect-ship
+						|	turret-lock-all
+						|	turret-lock
+						|	turret-get-secondary-ammo
+						|	turret-get-primary-ammo
+						|	turret-free-all
+						|	turret-free
+						|	turret-change-weapon
+						|	true
+						|	trigger-submodel-animation
+						|	transfer-cargo
+						|	training-msg
+						|	time-wing-destroyed
+						|	time-wing-departed
+						|	time-wing-arrived
+						|	time-undocked
+						|	time-ship-destroyed
+						|	time-ship-departed
+						|	time-ship-arrived
+						|	time-elapsed-last-order
+						|	time-docked
+						|	tech-reset-to-default
+						|	tech-add-weapons
+						|	tech-add-ships
+						|	tech-add-intel-xstr
+						|	tech-add-intel
+						|	team-score
+						|	targeted
+						|	supernova-stop
+						|	supernova-start
+						|	subsys-set-random
+						|	string-to-int
+						|	string-set-substring
+						|	string-less-than
+						|	string-greater-than
+						|	string-get-substring
+						|	string-get-length
+						|	string-equals
+						|	string-concatenate
+						|	speed
+						|	special-warpout-name
+						|	special-warp-dist
+						|	special-check
+						|	skill-level-at-least
+						|	sim-hits-left
+						|	signum
+						|	show-subtitle-text
+						|	show-subtitle-image
+						|	show-subtitle
+						|	show-jumpnode
+						|	ship_score
+						|	ship-vulnerable
+						|	ship-visible
+						|	ship-vaporize
+						|	ship-vanish
+						|	ship-untargetable-as-bomb
+						|	ship-untag
+						|	ship-unstealthy
+						|	ship-type-destroyed
+						|	ship-turret-target-order
+						|	ship-targetable-as-bomb
+						|	ship-tag
+						|	ship-subsys-vanish
+						|	ship-subsys-untargetable
+						|	ship-subsys-targetable
+						|	ship-subsys-no-replace
+						|	ship-subsys-no-live-debris
+						|	ship-subsys-ignore_if_dead
+						|	ship-subsys-guardian-threshold
+						|	ship-stealthy
+						|	ship-set-shockwave-damage-type
+						|	ship-set-damage-type
+						|	ship-rot-maneuver
+						|	ship-no-vaporize
+						|	ship-no-guardian
+						|	ship-maneuver
+						|	ship-lat-maneuver
+						|	ship-invulnerable
+						|	ship-invisible
+						|	ship-guardian-threshold
+						|	ship-guardian
+						|	ship-effect
+						|	ship-deaths
+						|	ship-create
+						|	ship-copy-damage
+						|	ship-change-callsign
+						|	ship-change-alt-name
+						|	shields-on
+						|	shields-off
+						|	shields-left
+						|	shield-recharge-pct
+						|	shield-quad-low
+						|	set-weapon-energy
+						|	set-variable-by-index
+						|	set-unscanned
+						|	set-training-context-speed
+						|	set-training-context-fly-path
+						|	set-time-compression
+						|	set-thrusters-status
+						|	set-support-ship
+						|	set-subsystem-strength
+						|	set-subspace-drive
+						|	set-sound-environment
+						|	set-skybox-orientation
+						|	set-skybox-model
+						|	set-shield-energy
+						|	set-secondary-weapon
+						|	set-secondary-ammo
+						|	set-scanned
+						|	set-respawns
+						|	set-primary-weapon
+						|	set-primary-ammo
+						|	set-post-effect
+						|	set-player-throttle-speed
+						|	set-player-orders
+						|	set-persona
+						|	set-object-speed-z
+						|	set-object-speed-y
+						|	set-object-speed-x
+						|	set-object-position
+						|	set-object-orientation
+						|	set-object-facing-object
+						|	set-object-facing
+						|	set-num-countermeasures
+						|	set-nav-visited
+						|	set-nav-needslink
+						|	set-nav-carry
+						|	set-motion-debris-override
+						|	set-mobile
+						|	set-mission-mood
+						|	set-jumpnode-name
+						|	set-jumpnode-model
+						|	set-jumpnode-color
+						|	set-immobile
+						|	set-fov
+						|	set-explosion-option
+						|	set-ets-values
+						|	set-docked
+						|	set-departure-info
+						|	set-debriefing-toggled
+						|	set-death-message
+						|	set-cutscene-bars
+						|	set-cargo
+						|	set-camera-target
+						|	set-camera-shudder
+						|	set-camera-rotation
+						|	set-camera-position
+						|	set-camera-host
+						|	set-camera-fov
+						|	set-camera-facing-object
+						|	set-camera-facing
+						|	set-camera
+						|	set-bit
+						|	set-arrival-info
+						|	set-armor-type
+						|	set-ambient-light
+						|	set-afterburner-energy
+						|	send-random-message
+						|	send-message-list
+						|	send-message
+						|	self-destruct
+						|	select-nav
+						|	secondary-fired-since
+						|	secondary-ammo-pct
+						|	secondaries-depleted
+						|	script-eval-string
+						|	script-eval-num
+						|	script-eval-block
+						|	script-eval
+						|	scramble-messages
+						|	sabotage-subsystem
+						|	rotating-subsys-set-turn-time
+						|	reverse-rotating-subsystem
+						|	restrict-nav
+						|	respawns-left
+						|	reset-time-compression
+						|	reset-orders
+						|	reset-fov
+						|	reset-camera
+						|	repair-subsystem
+						|	remove-weapons
+						|	remove-sun-bitmap
+						|	remove-goal
+						|	remove-from-collision-group
+						|	remove-background-bitmap
+						|	red-alert
+						|	random-of
+						|	random-multiple-of
+						|	rand-multiple
+						|	rand
+						|	query-orders
+						|	protect-ship
+						|	primitive-sensors-set-range
+						|	primary-fired-since
+						|	primary-ammo-pct
+						|	primaries-depleted
+						|	pow
+						|	player-use-ai
+						|	player-not-use-ai
+						|	player-is-cheating
+						|	play-sound-from-table
+						|	play-sound-from-file
+						|	perform-actions
+						|	percent-ships-disarmed
+						|	percent-ships-disabled
+						|	percent-ships-destroyed
+						|	percent-ships-departed
+						|	percent-ships-arrived
+						|	pause-sound-from-file
+						|	path-flown
+						|	order
+						|	or
+						|	number-of
+						|	num_type_kills
+						|	num_kills
+						|	num_class_kills
+						|	num_assists
+						|	num-within-box
+						|	num-valid-arguments
+						|	num-ships-in-wing
+						|	num-ships-in-battle
+						|	num-players
+						|	not
+						|	node-targeted
+						|	next-mission
+						|	never-warp
+						|	nebula-toggle-poof
+						|	nebula-change-storm
+						|	nebula-change-pattern
+						|	multi-eval
+						|	modify-variable
+						|	mod
+						|	mission-time-msecs
+						|	mission-time
+						|	mission-set-subspace
+						|	mission-set-nebula
+						|	missile-locked
+						|	min
+						|	max
+						|	lock-secondary-weapon
+						|	lock-rotating-subsystem
+						|	lock-primary-weapon
+						|	lock-perspective
+						|	lock-afterburner
+						|	key-reset-multiple
+						|	key-reset
+						|	key-pressed
+						|	kamikaze
+						|	jettison-cargo-delay
+						|	is_tagged
+						|	is-subsystem-destroyed-delay
+						|	is-subsystem-destroyed
+						|	is-ship-visible
+						|	is-ship-type
+						|	is-ship-stealthy
+						|	is-ship-class
+						|	is-secondary-selected
+						|	is-primary-selected
+						|	is-previous-goal-true
+						|	is-previous-goal-incomplete
+						|	is-previous-goal-false
+						|	is-previous-event-true
+						|	is-previous-event-incomplete
+						|	is-previous-event-false
+						|	is-player
+						|	is-nav-visited
+						|	is-nav-linked
+						|	is-in-mission
+						|	is-in-box
+						|	is-iff
+						|	is-goal-true-delay
+						|	is-goal-incomplete
+						|	is-goal-false-delay
+						|	is-friendly-stealth-visible
+						|	is-facing
+						|	is-event-true-msecs-delay
+						|	is-event-true-delay
+						|	is-event-true
+						|	is-event-incomplete
+						|	is-event-false-msecs-delay
+						|	is-event-false-delay
+						|	is-event-false
+						|	is-disarmed-delay
+						|	is-disarmed
+						|	is-disabled-delay
+						|	is-disabled
+						|	is-destroyed-delay
+						|	is-destroyed
+						|	is-cargo-known-delay
+						|	is-cargo-known
+						|	is-cargo
+						|	is-bit-set
+						|	is-ai-class
+						|	invalidate-goal
+						|	invalidate-argument
+						|	invalidate-all-arguments
+						|	int-to-string
+						|	in-sequence
+						|	ignore-key
+						|	if-then-else
+						|	hud-set-text-num
+						|	hud-set-text
+						|	hud-set-retail-gauge-active
+						|	hud-set-message
+						|	hud-set-max-targeting-range
+						|	hud-set-frame
+						|	hud-set-directive
+						|	hud-set-custom-gauge-active
+						|	hud-set-coords
+						|	hud-set-color
+						|	hud-gauge-set-active
+						|	hud-display-gauge
+						|	hud-disable-except-messages
+						|	hud-disable
+						|	hud-clear-messages
+						|	hud-activate-gauge-type
+						|	hits-left-subsystem-specific
+						|	hits-left-subsystem-generic
+						|	hits-left-subsystem
+						|	hits-left
+						|	hide-nav
+						|	hide-jumpnode
+						|	has-undocked-delay
+						|	has-undocked
+						|	has-time-elapsed
+						|	has-secondary-weapon
+						|	has-primary-weapon
+						|	has-docked-delay
+						|	has-docked
+						|	has-departed-delay
+						|	has-departed
+						|	has-been-tagged-delay
+						|	has-arrived-delay
+						|	has-arrived
+						|	grant-promotion
+						|	grant-medal
+						|	good-secondary-time
+						|	good-rearm-time
+						|	goals
+						|	get-variable-by-index
+						|	get-throttle-speed
+						|	get-secondary-ammo
+						|	get-primary-ammo
+						|	get-object-z
+						|	get-object-y
+						|	get-object-x
+						|	get-object-speed-z
+						|	get-object-speed-y
+						|	get-object-speed-x
+						|	get-object-pitch
+						|	get-object-heading
+						|	get-object-bank
+						|	get-num-countermeasures
+						|	get-fov
+						|	get-ets-value
+						|	get-damage-caused
+						|	get-collision-group
+						|	friendly-stealth-visible
+						|	friendly-stealth-invisible
+						|	free-rotating-subsystem
+						|	force-jump
+						|	force-glide
+						|	for-counter
+						|	flash-hud-gauge
+						|	fix-warp
+						|	fire-beam-at-coordinates
+						|	fire-beam
+						|	field-set-damage-type
+						|	false
+						|	fade-out
+						|	fade-in
+						|	facing-waypoint
+						|	facing
+						|	explosion-effect
+						|	exchange-cargo
+						|	every-time-argument
+						|	every-time
+						|	every-of
+						|	engine-recharge-pct
+						|	end-of-campaign
+						|	end-mission
+						|	end-campaign
+						|	enable-ets
+						|	enable-builtin-messages
+						|	don\x{27}t-collide-invisible
+						|	do-nothing
+						|	do-for-valid-arguments
+						|	distance-to-nav
+						|	distance-ship-subsystem
+						|	distance
+						|	disable-ets
+						|	disable-builtin-messages
+						|	directive-value
+						|	destroyed-or-departed-delay
+						|	destroy-subsys-instantly
+						|	destroy-instantly
+						|	depart-node-delay
+						|	del-nav
+						|	debug
+						|	deactivate-glow-points
+						|	deactivate-glow-point-bank
+						|	deactivate-glow-maps
+						|	damaged-escort-priority-all
+						|	damaged-escort-priority
+						|	current-speed
+						|	copy-variable-from-index
+						|	copy-variable-between-indexes
+						|	cond
+						|	collide-invisible
+						|	close-sound-from-file
+						|	clear-wing-goals
+						|	clear-subtitles
+						|	clear-ship-goals
+						|	clear-goals
+						|	change-team-score
+						|	change-team-color
+						|	change-subsystem-name
+						|	change-soundtrack
+						|	change-ship-class
+						|	change-player-score
+						|	change-iff-color
+						|	change-iff
+						|	change-ai-class
+						|	cargo-no-deplete
+						|	cap-waypoint-speed
+						|	cap-subsys-cargo-known-delay
+						|	call-ssm-strike
+						|	break-warp
+						|	bitwise-xor
+						|	bitwise-or
+						|	bitwise-not
+						|	bitwise-and
+						|	beam-unprotect-ship
+						|	beam-protect-ship
+						|	beam-lock-all
+						|	beam-lock
+						|	beam-free-all
+						|	beam-free
+						|	beam-create
+						|	awacs-set-radius
+						|	avg
+						|	are-waypoints-done-delay
+						|	are-waypoints-done
+						|	are-ship-flags-set
+						|	any-of
+						|	and-in-sequence
+						|	and
+						|	alter-ship-flag
+						|	allow-weapon
+						|	allow-warp
+						|	allow-treason
+						|	allow-ship
+						|	ai-waypoints-once
+						|	ai-waypoints
+						|	ai-warp-out
+						|	ai-warp
+						|	ai-undock
+						|	ai-stay-still
+						|	ai-stay-near-ship
+						|	ai-play-dead
+						|	ai-keep-safe-distance
+						|	ai-ignore-new
+						|	ai-ignore
+						|	ai-guard-wing
+						|	ai-guard
+						|	ai-form-on-wing
+						|	ai-evade-ship
+						|	ai-dock
+						|	ai-disarm-ship
+						|	ai-disable-ship
+						|	ai-destroy-subsystem
+						|	ai-chase-wing
+						|	ai-chase-any
+						|	ai-chase
+						|	afterburner-energy-pct
+						|	adjust-audio-volume
+						|	add-wing-goal
+						|	add-to-collision-group
+						|	add-sun-bitmap
+						|	add-ship-goal
+						|	add-remove-escort
+						|	add-nav-waypoint
+						|	add-nav-ship
+						|	add-goal
+						|	add-background-bitmap
+						|	activate-glow-points
+						|	activate-glow-point-bank
+						|	activate-glow-maps
+						|	abs
+						|	&gt;=
+						|	&gt;
+						|	=
+						|	&lt;=
+						|	&lt;
+						|	/
+						|	-
+						|	\+
+						|	\*
+						|	!=
+						)
+						(?=\s|$)</string>
+					<key>name</key>
+					<string>keyword.operator</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>text.freespace2</string>
 	<key>uuid</key>
