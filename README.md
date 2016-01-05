@@ -28,7 +28,7 @@ Supported file types:
 
 ### 0.2.0
 * Restructures SEXP handling to be much more robust
-* Better differentiate some language elements
+* Better differentiates some language elements
 
 ### 0.1.0
 * Initial release
