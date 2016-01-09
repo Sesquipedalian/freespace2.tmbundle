@@ -84,13 +84,13 @@
 			<key>match</key>
 			<string>\+[A-Za-z0-9_ ]+(?=:|$)</string>
 			<key>name</key>
-			<string>keyword.other.fs2</string>
+			<string>keyword.other.unit.fs2</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>@[A-Za-z0-9_ ]+(?=:|$)</string>
 			<key>name</key>
-			<string>variable.parameter.fs2</string>
+			<string>storage.type.fs2</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -706,7 +706,7 @@
 						)
 						(?=\s|$)</string>
 					<key>name</key>
-					<string>keyword.operator.fs2</string>
+					<string>keyword.other.special-method.fs2</string>
 				</dict>
 			</array>
 		</dict>
