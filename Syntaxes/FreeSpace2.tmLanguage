@@ -45,7 +45,7 @@
 			<key>contentName</key>
 			<string>string.quoted.double.fs2</string>
 			<key>end</key>
-			<string>,\s+(-?\d+)\)</string>
+			<string>,\s*(-?\d+)\s*\)</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
