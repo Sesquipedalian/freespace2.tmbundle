@@ -27,7 +27,8 @@ Supported file types:
 ## Changelog
 
 ### 0.3.0
-* Refinements and improvements
+* Redefines some language elements (again) for better cross-compatibility with Atom's default themes
+* Fine tunes a couple of the regular expressions
 
 ### 0.2.1
 * Adjusts SEXP detection to work around a bug in Sublime Text
