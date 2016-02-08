@@ -26,6 +26,9 @@ Supported file types:
 
 ## Changelog
 
+### 0.3.3
+* Detect SEXP operators correctly even when not separated by whitespace from parentheses
+
 ### 0.3.2
 * Allow space between digit and closing parenthesis in XSTR construct
 
